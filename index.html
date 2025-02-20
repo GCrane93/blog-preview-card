@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --colour-gray-950: hsl(0, 0%, 7%);
+        --colour-gray-500: hsl(0, 0%, 42%);
+        --colour-yellow: hsl(47, 88%, 63%);
+        --colour-white: hsl(0, 0%, 100%);
+        --text-p1-size: 24px;
+        --text-p1-line-height: 150%;
+        --text-p1-letter-spacing: 0;
+        --text-p2-size: 16px;
+        --text-p2-line-height: var(--text-p1-line-height);
+        --text-p2-letter-spacing: var(--text-p1-letter-spacing);
+        --text-p3-size: 14px;
+        --text-p3-line-height: var(--text-p1-line-height);
+        --text-p3-letter-spacing: var(--text-p1-letter-spacing);
+        --spacer-300: 24px;
+        --spacer-150: 12px;
+        --spacer-100: 8px;
+        --spacer-50: 4px;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Figtree", serif;
+        background: var(--colour-yellow);
+      }
+
+      .blog-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacer-150);
+        background: var(--colour-white);
+        padding: var(--spacer-300);
+        border: 1px solid var(--colour-gray-950);
+        box-shadow: var(--spacer-100) var(--spacer-100) 0 #000;
+        border-radius: 20px;
+      }
+
+      .blog-card__img {
+        width: 100%;
+        max-width: 336px;
+        height: 200px;
+        margin-bottom: var(--spacer-150);
+        border-radius: 10px;
+      }
+
+      .blog-card__img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .blog-card__tags ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacer-50);
+        margin: 0;
+        padding: 0;
+      }
+
+      .blog-card__tags li {
+        list-style: none;
+      }
+
+      .blog-card__tags li a {
+        display: block;
+        background: var(--colour-yellow);
+        color: var(--colour-gray-950);
+        padding: 4px 12px;
+        font-size: var(--text-p3-size);
+        font-weight: 800;
+        line-height: var(--text-p3-line-height);
+        letter-spacing: var(--text-p3-letter-spacing);
+        text-decoration: none;
+        border-radius: var(--spacer-50);
+      }
+
+      .blog-card__pub-date {
+        font-size: var(--text-p3-size);
+        font-weight: 500;
+        line-height: var(--text-p3-line-height);
+        letter-spacing: var(--text-p3-letter-spacing);
+      }
+
+      .blog-card__title {
+        color: var(--colour-gray-950);
+        font-size: var(--text-p1-size);
+        font-weight: 800;
+        line-height: var(--text-p1-line-height);
+        letter-spacing: var(--text-p1-letter-spacing);
+        text-decoration: none;
+      }
+
+      .blog-card__text {
+        margin: 0;
+        margin-bottom: var(--spacer-150);
+        max-width: 336px;
+        color: var(--colour-gray-500);
+        font-size: var(--text-p2-size);
+        font-weight: 500;
+        line-height: var(--text-p2-line-height);
+        letter-spacing: var(--text-p2-letter-spacing);
+        text-wrap: pretty;
+      }
+
+      .blog-card__author {
+        display: flex;
+        align-items: center;
+        gap: var(--spacer-150);
+        color: var(--colour-gray-950);
+        text-decoration: none;
+      }
+
+      .blog-card__author img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .blog-card__author-name {
+        color: currentColor;
+        font-size: var(--text-p3-size);
+        font-weight: 800;
+        line-height: var(--text-p3-line-height);
+        letter-spacing: var(--text-p3-letter-spacing);
+      }
+
+      .attribution {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-card">
+      <div class="blog-card__img">
+        <img src="assets/images/illustration-article.svg" alt="HTML &amp; CSS foundations" />
+      </div>
+      <div class="blog-card__tags">
+        <ul>
+          <li><a href="#">Learning</a></li>
+        </ul>
+      </div>
+      <div class="blog-card__pub-date">Published 21 Dec 2023</div>
+      <a href="#" class="blog-card__title">HTML &amp; CSS foundations</a>
+      <p class="blog-card__text">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+      <a href="#" class="blog-card__author">
+        <img src="assets/images/image-avatar.webp" alt="Author Image" />
+        <div class="blog-card__author-name">Greg Hooper</div>
+      </a>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://www.frontendmentor.io/profile/GCrane93">GCrane93</a>.
+    </div>
+  </body>
+</html>
